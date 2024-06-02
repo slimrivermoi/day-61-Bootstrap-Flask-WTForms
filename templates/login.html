@@ -1,0 +1,38 @@
+{%  extends "base.html" %}}
+{%  from 'bootstrap4/form.html' import render_form  %}
+{%  block title  %}Login{%  endblock %}
+{%  block content  %}
+
+        <div class="container">
+		<h1>Login</h1>
+        <!-- This is where our form will go. -->
+
+<!-- USING Bootstrap Flask Macro (form is done automatically but need to add import for render form at the top.) -->
+            {{ render_form(form, button_map={'submit': 'success', 'cancel':'danger'}) }}
+
+<!--            add a second rendered form to test-->
+            <hr>
+            {{ render_form(form, button_style='primary') }}
+
+
+<!--            USING WTF FORM METHOD    (This has more lines) -->
+<!--			<form method="POST" action="{{  url_for('login')  }}" novalidate>-->
+<!--				{{ form.csrf_token }}-->
+<!--				<p>-->
+<!--					{{ form.email.label }} <br> {{ form.email(size=30) }}-->
+<!--					{% for err in form.email.errors %}-->
+<!--					<span style="color:red">{{ err }}</span>-->
+<!--					{% endfor %}-->
+<!--				</p>-->
+<!--				<p>-->
+<!--					{{ form.password.label }} <br>  {{ form.password(size=30) }}-->
+<!--					{% for err in form.password.errors %}-->
+<!--					<span style="color:red">{{ err }}</span>-->
+<!--					{% endfor %}-->
+
+<!--				</p>-->
+<!--					{{ form.submit }}-->
+<!--			</form>-->
+
+        </div>
+{%   endblock   %}
